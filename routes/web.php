@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('/', 'GuestController@index');
+/*Route::group(['prefix'=>'guest'], function(){
+
+		Route::resource('home','GuestController');
+	});*/
+
 
 Auth::routes();
 

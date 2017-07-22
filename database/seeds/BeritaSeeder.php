@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Kategori;
 use App\Berita;
+use App\User;
 
 class BeritaSeeder extends Seeder
 {

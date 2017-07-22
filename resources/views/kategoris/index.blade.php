@@ -1,5 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -12,8 +14,10 @@
 					<h2 class="panel-title">Kategori</h2>
 				</div>
 				<div class="panel-body">
-					<p><a class="btn btn-primary" href="{{ route('kategoris.create') }}">Tambah</a></p>
-					{!! $html->table(['class'=>'table-striped']) !!}
+ 					
+ 					 <p><a class="btn btn-primary" href="{{url('/admin/kategoris/create')}}">
+ 					 Tambah</a></p>
+ 					{!! $html->table(['class'=>'table-striped']) !!}
 				</div>
 			</div>
 		</div>

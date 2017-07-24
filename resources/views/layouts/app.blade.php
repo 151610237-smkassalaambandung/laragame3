@@ -19,6 +19,34 @@
     <link href="/css/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Scripts -->
+
+    <!--.panel-heading-custom {
+          color: black;
+          background: rgba(225,225,225,0.5);
+          background: rgba(225,225,225,0.0);
+          border-top-left-radius:15px ;  
+          border-top-right-radius:15px ; 
+         }
+    .panel-custom {
+          background: rgba(225,225,225,0.5);
+          border-radius: 15px; 
+         }
+    .panel-title-custom {
+          color: orange;
+          font-family: 'Comfortaa';
+         }
+    table{
+          
+          background: rgb(255,255,255); 
+         }
+    .navbar-custom{
+          color: white;
+          background: rgba(8,8,8,0.5); 
+          border-bottom-left-radius:20px ;  
+          border-bottom-right-radius:20px ;
+          
+         } -->
+    
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -43,9 +71,15 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                     @if(Auth::guest())
+                    <div class="logo"><a class="navbar" href="{{ url('/guest/home/') }}"><img src="/Laragame.png"></a></div>
+                    
+                    @endif
+                    @role('admin')
+                    <a class="navbar-brand" href="{{ url('/admin/rumah/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+                    @endrole
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -98,7 +132,7 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+
     <script src="/js/jquery.dataTables.min.js"></script>
     <script src="/js/dataTables.bootstrap.min.js"></script>
     <script src="/js/custom.js"></script>

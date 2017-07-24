@@ -22,7 +22,7 @@ class BeritaController extends Controller
     public function index(Request $request, Builder $htmlBuilder)
     {
         if ($request->ajax()){
-            $beritas = Berita::with('kategoris');
+            $beritas = Berita::with('kategori');
             return Datatables::of($beritas)
                 ->addColumn('cover', function($beritas){
                     return '<img src="/img/'.$beritas->cover. '" height="100px" width="100px">';
@@ -42,7 +42,7 @@ class BeritaController extends Controller
         ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul'])
         ->addColumn(['data'=>'deskripsi','name'=>'deskripsi','title'=>'Deskripsi'])
         ->addColumn(['data'=>'tanggal','name'=>'tanggal','title'=>'Tanggal'])
-        ->addColumn(['data'=>'kategoris.kategori','name'=>'kategoris.kategori','title'=>'Nama Kategori'])
+        ->addColumn(['data'=>'kategori.kategori','name'=>'kategori.kategori','title'=>'Nama Kategori'])
         ->addColumn(['data'=>'action', 'name'=>'action', 'title'=>'', 'orderable'=>false,'searchable'=>false]);
 
         return view('beritas.index')->with(compact('html'));

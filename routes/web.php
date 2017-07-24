@@ -14,7 +14,7 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/', 'GuestController@index');
+Route::get('/home', 'GuestController@index');
 /*Route::group(['prefix'=>'guest'], function(){
 
 		Route::resource('home','GuestController');
@@ -23,9 +23,10 @@ Route::get('/', 'GuestController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']], function(){
 	Route::resource('kategoris', 'KategoriController');
 	Route::resource('beritas', 'BeritaController');
+	Route::resource('rumah','AdminController');
 });

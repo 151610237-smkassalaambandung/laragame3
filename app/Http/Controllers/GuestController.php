@@ -15,7 +15,7 @@ class GuestController extends Controller
 	{
     if ($request->ajax())
         {
-            $berita = Berita::with('kategoris');
+            $berita = Berita::with('kategori');
             return Datatables::of($berita)
             ->addColumn('cover', function($berita){
               return '<img src="/img/'.$berita->cover. '" height="100px" width="100px" >';
@@ -39,7 +39,7 @@ class GuestController extends Controller
         ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul'])
         ->addColumn(['data'=>'deskripsi','name'=>'deskripsi','title'=>'Deskripsi', 'orderable'=>false,'searchable'=>false])
         ->addColumn(['data'=>'tanggal','name'=>'tanggal','title'=>'Tanggal'])
-        ->addColumn(['data'=>'kategoris.kategori','name'=>'kategoris.kategori','title'=>'Nama Kategori']);
+        ->addColumn(['data'=>'kategori.kategori','name'=>'kategori.kategori','title'=>'Nama Kategori']);
         
 
         return view('beritas.index')->with(compact('html'));

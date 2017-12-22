@@ -17,8 +17,8 @@ class CreateBeritasTable extends Migration
             $table->increments('id');
             $table->string('cover')->nullable();
             $table->string('judul');
+            $table->string('spoiler');
             $table->text('deskripsi');
-            $table->date('tanggal');
             $table->integer('kategori_id')->unsigned();
 
             $table->timestamps();

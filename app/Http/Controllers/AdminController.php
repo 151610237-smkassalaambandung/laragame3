@@ -21,7 +21,7 @@ class AdminController extends Controller
             ->addColumn('cover', function($berita){
               return '<img src="/img/'.$berita->cover. '" height="100px" width="100px" >';
             })
-            ->addColumn('spoiler', function($berita){
+            ->addColumn('judul', function($berita){
               return '<a href="'.route('rumah.show',$berita->id).'">'.$berita->judul.'</a>';
             })
             ->addColumn('stock',function($berita){
@@ -38,9 +38,9 @@ class AdminController extends Controller
         $html = $htmlBuilder
 
               ->addColumn(['data'=>'cover','name'=>'cover','title'=>'Cover'])
-              ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul'])
+              ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul','orderable'=>false,'searchable'=>false])
+              ->addColumn(['data'=>'spoiler','name'=>'spoiler','title'=>'Spoiler','orderable'=>false,'searchable'=>false])
               ->addColumn(['data'=>'deskripsi','name'=>'deskripsi','title'=>'Deskripsi'])
-            //  ->addColumn(['data'=>'spoiler','name'=>'spoiler','title'=>'Spoiler','orderable'=>false,'searchable'=>false])
               ->addColumn(['data'=>'kategori.kategori','name'=>'kategori.kategori','title'=>'kategori']);
              // ->addColumn(['data'=>'action','name'=>'action','title'=>'','orderable'=>false,'searchable'=>false]);
               return view('admin.index')->with(compact('html'));

@@ -18,10 +18,10 @@ class GuestController extends Controller
             $berita = Berita::with('kategori');
             return Datatables::of($berita)
             ->addColumn('cover', function($berita){
-              return '<img src="/img/'.$berita->cover. '" height="100px" width="100px" >';
+              return '<img src="/img/'.$berita->cover. '" height="100px" width="=100px" >';
             })
-            ->addColumn('deskripsi', function($berita){
-              return '<a href="'.route('home.show',$berita->id).'">'.$berita->deskripsi.'</a>';
+            ->addColumn('judul', function($berita){
+              return '<a href="'.route('rumah.show',$berita->id).'">'.$berita->judul.'</a>';
             })
             ->addColumn('stock',function($berita){
             return $berita->stock;
@@ -37,12 +37,79 @@ class GuestController extends Controller
         $html = $htmlBuilder
         ->addColumn(['data'=>'cover','name'=>'cover','title'=>'Cover'])
         ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul'])
-        ->addColumn(['data'=>'deskripsi','name'=>'deskripsi','title'=>'Deskripsi', 'orderable'=>false,'searchable'=>false])
-        ->addColumn(['data'=>'tanggal','name'=>'tanggal','title'=>'Tanggal'])
-        ->addColumn(['data'=>'kategori.kategori','name'=>'kategori.kategori','title'=>'Nama Kategori']);
+        ->addColumn(['data'=>'spoiler','name'=>'spoiler','title'=>'Spoiler','orderable'=>false,'searchable'=>false]);
+        
+        
         
 
-        return view('beritas.index')->with(compact('html'));
+        return view('guest.index')->with(compact('html'));
+    }
+
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+       //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $berita = Berita::find($id);
+        return view('guest.show',compact('berita'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 
 }

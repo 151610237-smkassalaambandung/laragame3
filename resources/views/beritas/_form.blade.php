@@ -6,6 +6,14 @@
 	</div>
 </div>
 
+<div class="form-group{{ $errors->has('spoiler') ? 'has-error' : '' }}">
+	{!! Form::label('spoiler','Spoiler',['class'=>'col-md-2 control-label']) !!}
+	<div class="col-md-4">
+		{!! Form::text('spoiler',null,['class'=>'form-control']) !!}
+		{!! $errors->first('spoiler', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
 <div class="form-group{{ $errors->has('deskripsi') ? 'has-error' : '' }}">
 	{!! Form::label('deskripsi','Deskripsi',['class'=>'col-md-2 control-label']) !!}
 	<div class="col-md-4">
@@ -14,13 +22,7 @@
 	</div>
 </div>
 
-<div class="form-group{{ $errors->has('tanggal') ? 'has-error' : '' }}">
-	{!! Form::label('tanggal','Tanggal',['class'=>'col-md-2 control-label']) !!}
-	<div class="col-md-4">
-		{!! Form::text('tanggal',null,['class'=>'form-control']) !!}
-		{!! $errors->first('tanggal', '<p class="help-block">:message</p>') !!}
-	</div>
-</div>
+
 
 <div class="form-group{{ $errors->has('kategori_id') ? 'has-error' : '' }}">
 	{!! Form::label('kategori_id','Kategori',['class'=>'col-md-2 control-label']) !!}

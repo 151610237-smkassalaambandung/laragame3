@@ -27,6 +27,11 @@ class BeritaController extends Controller
                 ->addColumn('cover', function($beritas){
                     return '<img src="/img/'.$beritas->cover. '" height="100px" width="100px">';
                 })
+
+                ->addColumn('judul', function($berita){
+                    return '<a href="'.route('beritas.show',$berita->id).'">'.$berita->judul.'</a>';
+                })
+
                 ->addColumn('action', function($berita){
                     return view('datatable._action', [
                         'model'     => $berita,
@@ -40,8 +45,8 @@ class BeritaController extends Controller
         $html = $htmlBuilder
         ->addColumn(['data'=>'cover','name'=>'cover','title'=>'Cover'])
         ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul'])
-        ->addColumn(['data'=>'deskripsi','name'=>'deskripsi','title'=>'Deskripsi'])
-        ->addColumn(['data'=>'tanggal','name'=>'tanggal','title'=>'Tanggal'])
+        ->addColumn(['data'=>'spoiler','name'=>'spoiler','title'=>'Spoiler'])
+        
         ->addColumn(['data'=>'kategori.kategori','name'=>'kategori.kategori','title'=>'Nama Kategori'])
         ->addColumn(['data'=>'action', 'name'=>'action', 'title'=>'', 'orderable'=>false,'searchable'=>false]);
 
@@ -106,7 +111,8 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        //
+        $berita = Berita::find($id);
+        return view('admin.show',compact('berita'));
     }
 
     /**

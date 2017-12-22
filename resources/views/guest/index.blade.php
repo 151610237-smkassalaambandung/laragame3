@@ -5,8 +5,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
+				<div class="panel " style="background-color: rgba(225,225,225,0.8);">
+					<div class="panel-heading" style="background-color:dodgerblue">
 						<h2 class="panel-title">Daftar Kategori</h2>
 					</div>
 					<div class="panel-body">

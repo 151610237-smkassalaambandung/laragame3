@@ -7,8 +7,8 @@
 				<li><a href="{{ url('/home') }}">Dashboard</a></li>
 				<li class="active">Berita</li>
 			</ul>
-			<div class="panel panel-primary">
-				<div class="panel-heading">
+			<div class="panel " style="background-color: rgba(225,225,225,0.8);">
+				<div class="panel-heading" style="background-color:dodgerblue">
 					<h2 class="panel-title">Berita</h2>
 				</div>
 				<div class="panel-body">

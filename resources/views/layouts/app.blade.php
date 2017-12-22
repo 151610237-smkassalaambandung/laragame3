@@ -72,11 +72,14 @@
 
                     <!-- Branding Image -->
                      @if(Auth::guest())
-                    <div class="logo"><a class="navbar" href="{{ url('/guest/home/') }}"><img src="/Laragame.png"></a></div>
+                    <a class="navbar-brand" href="{{ url('/guest/home/') }}">
+                        {{ config('app.name', 'Laravel') }}</a>
+                    <a class="navbar-brand" href="{{ url('/guest/kategoris/') }}">
+                        {{ config('kategori', 'Kategori') }}</a>
                     
                     @endif
                     @role('admin')
-                    <a class="navbar-brand" href="{{ url('/admin/rumah/') }}">
+                    <a class="navbar-brand" href="{{ url('/admin/beritas/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     @endrole

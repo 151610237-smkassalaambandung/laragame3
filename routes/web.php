@@ -14,11 +14,11 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/home', 'GuestController@index');
-/*Route::group(['prefix'=>'guest'], function(){
+Route::get('/home', 'HomeController@index');
+Route::group(['prefix'=>'guest'], function(){
 
 		Route::resource('home','GuestController');
-	});*/
+	});
 
 
 Auth::routes();

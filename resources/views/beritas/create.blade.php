@@ -10,8 +10,8 @@
 					<li> <a href="{{url('/admin/beritas')}}"> Berita </a> </li>
 					<li class="active"> Tambah Berita </li>
 				</ul>
-				<div class="panel panel-default">
-					<div class="panel-heading">
+				<div class="panel " style="background-color: rgba(225,225,225,0.8);">
+					<div class="panel-heading" style="background-color:dodgerblue">
 						<h2 class="panel-title" >  Tambah Berita </h2>
 					</div>
 

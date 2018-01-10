@@ -74,9 +74,8 @@
                      @if(Auth::guest())
                     <a class="navbar-brand" href="{{ url('/guest/home/') }}">
                         {{ config('app.name', 'Laravel') }}</a>
-                    <a class="navbar-brand" href="{{ url('/guest/kategoris/') }}">
-                        {{ config('kategori', 'Kategori') }}</a>
                     
+
                     @endif
                     @role('admin')
                     <a class="navbar-brand" href="{{ url('/admin/beritas/') }}">

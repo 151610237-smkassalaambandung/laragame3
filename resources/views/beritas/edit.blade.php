@@ -15,7 +15,7 @@
 						<h2 class="panel-title">Ubah Berita</h2>
 					</div>
 					<div class="panel-body">
-					{!! Form::model($berita,['url'=>route('beritas.update',$berita->id), 'method'=>'put','class'=>'form-horizontal']) !!}
+					{!! Form::model($berita,['url'=>route('beritas.update',$berita->id), 'method'=>'put','class'=>'form-horizontal','enctype'=>'multipart/form-data']) !!}
 					@include('beritas._form')
 					{!! Form::close() !!}
 					</div>

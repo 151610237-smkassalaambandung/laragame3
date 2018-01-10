@@ -18,13 +18,13 @@ class GuestController extends Controller
             $berita = Berita::with('kategori');
             return Datatables::of($berita)
             ->addColumn('cover', function($berita){
-              return '<img src="/img/'.$berita->cover. '" height="100px" width="=100px" >';
+              return '<img src="/img/'.$berita->cover.'" height="100px" width="=100px" >';
             })
             ->addColumn('judul', function($berita){
-              return '<a href="'.route('rumah.show',$berita->id).'">'.$berita->judul.'</a>';
+              return '<a href="'.route('home.show',$berita->id).'">'.$berita->judul.'</a>';
             })
-            ->addColumn('stock',function($berita){
-            return $berita->stock;
+            ->addColumn('spoiler',function($berita){
+            return $berita->spoiler;
             })
                 ->addColumn('action',function($berita){                    
                 if (Laratrust::hasRole('guest')) return '';

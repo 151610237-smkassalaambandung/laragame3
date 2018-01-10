@@ -11,8 +11,8 @@
 					<li class="active">Detail {{ $berita->judul }}</li>
 				</ul>
 
-				<div class="panel " style="background-color: rgba(225,225,225,0.8);">
-					<div class="panel-heading" style="background-color:dodgerblue">
+				<div class="panel " style="background-color: rgba(225,255,255,0.8);">
+					<div class="panel-heading" >
 						<h2 class="panel-title">Detail {{ $berita->judul }}</h2>
 						<div class="panel-body">
 							<center> <h1> {{ $berita->judul }} </h1> </center> <br>

@@ -24,8 +24,8 @@ class AdminController extends Controller
             ->addColumn('judul', function($berita){
               return '<a href="'.route('rumah.show',$berita->id).'">'.$berita->judul.'</a>';
             })
-            ->addColumn('stock',function($berita){
-            return $berita->stock;
+            ->addColumn('spoiler',function($berita){
+            return $berita->spoiler;
             })
                 ->addColumn('action',function($berita){                    
                 if (Laratrust::hasRole('admin')) return '';
@@ -38,10 +38,10 @@ class AdminController extends Controller
         $html = $htmlBuilder
 
               ->addColumn(['data'=>'cover','name'=>'cover','title'=>'Cover'])
-              ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul','orderable'=>false,'searchable'=>false])
-              ->addColumn(['data'=>'spoiler','name'=>'spoiler','title'=>'Spoiler','orderable'=>false,'searchable'=>false])
-              ->addColumn(['data'=>'deskripsi','name'=>'deskripsi','title'=>'Deskripsi'])
-              ->addColumn(['data'=>'kategori.kategori','name'=>'kategori.kategori','title'=>'kategori']);
+              ->addColumn(['data'=>'judul','name'=>'judul','title'=>'Judul'])
+              ->addColumn(['data'=>'spoiler','name'=>'spoiler','title'=>'Spoiler','orderable'=>false,'searchable'=>false]);
+              // ->addColumn(['data'=>'deskripsi','name'=>'deskripsi','title'=>'Deskripsi']);
+              // ->addColumn(['data'=>'kategori.kategori','name'=>'kategori.kategori','title'=>'kategori']);
              // ->addColumn(['data'=>'action','name'=>'action','title'=>'','orderable'=>false,'searchable'=>false]);
               return view('admin.index')->with(compact('html'));
     }

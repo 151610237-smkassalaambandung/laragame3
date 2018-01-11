@@ -23,7 +23,7 @@ Route::group(['prefix'=>'guest'], function(){
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'GuestController@index');
 
 Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']], function(){
 	Route::resource('kategoris', 'KategoriController');

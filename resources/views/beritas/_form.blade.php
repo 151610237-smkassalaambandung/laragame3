@@ -16,8 +16,8 @@
 
 <div class="form-group{{ $errors->has('deskripsi') ? 'has-error' : '' }}">
 	{!! Form::label('deskripsi','Deskripsi',['class'=>'col-md-2 control-label']) !!}
-	<div class="col-md-4">
-		{!! Form::textarea('deskripsi',null,['class'=>'form-control']) !!}
+	<div class="col-md-8">
+		{!! Form::textarea ('deskripsi',null,['class'=>'ckeditor']) !!}
 		{!! $errors->first('deskripsi', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>

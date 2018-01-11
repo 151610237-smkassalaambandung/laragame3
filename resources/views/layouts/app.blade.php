@@ -78,7 +78,7 @@
 
                     @endif
                     @role('admin')
-                    <a class="navbar-brand" href="{{ url('/admin/beritas/') }}">
+                    <a class="navbar-brand" href="{{ url('/admin/rumah/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     @endrole
@@ -101,7 +101,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Daftar</a></li>
+                            
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -138,6 +138,15 @@
     <script src="/js/jquery.dataTables.min.js"></script>
     <script src="/js/dataTables.bootstrap.min.js"></script>
     <script src="/js/custom.js"></script>
+
+    <!-- panggil ckeditor.js -->
+    <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <!-- panggil adapter jquery ckeditor -->
+    <script type="text/javascript" src="{{asset('ckeditor/adapters/jquery.js')}}"></script>
+    <!-- setup selector -->
+    <script type="text/javascript">
+        $('textarea.texteditor').ckeditor();
+    </script>
 
     @yield('scripts')
 </body>

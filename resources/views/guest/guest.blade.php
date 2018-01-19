@@ -23,7 +23,7 @@
 							</p>
 							@endif <br>
 							</center>
-							<p> {{ $berita->deskripsi }} </p>
+							<p> {!! $berita->deskripsi !!} </p>
 						</div>
 					</div>
 			  	</div>

@@ -36,7 +36,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="content">
+		<div class="content"><h1>:'(</h1>
 			<div class="title">ERROR</div>
 			<p>Maaf, Anda Tidak Memiliki Akses Untuk Fitur Ini</p>
 			<p><a href="{{ url('/') }}" class="btn btn-primary">Kembali Ke Halaman Awal</a></p>

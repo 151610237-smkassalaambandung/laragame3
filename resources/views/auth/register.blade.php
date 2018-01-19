@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
                             <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"> </span>
-                                <i class="fa fa-btn fa-user"></i>Daftar
+                                <i class="fa fa-btn"></i>Daftar
                             </button>
                         </div>
                     </div>               
